@@ -1,0 +1,27 @@
+<%- include("header", {title: title}); %>
+
+<div class="container">
+    <h3>Edit Word</h3>
+    <!-- <pre><%= JSON.stringify(data, null, 4) %></pre> -->
+    <form class="form1" onsubmit="editWord()" method="post" action="/note/edit">
+        <div class="box">
+            <label for="word">Word</label>
+            <input type="text" id="word" name="word" readonly value="<%= data.word %>">    
+        </div>
+
+        <div class="box">
+            <label for="def">Definition</label>
+            <input type="text" id="def" name="def" value="<%= data.definition %>">    
+        </div>
+
+        <div class="box">
+            <label for="ex">Example</label>
+            <input type="text" id="ex" name="ex" value="<%= data.example %>">    
+        </div>
+
+        <input type="submit" id="btn" name="edit" value="Edit">
+    </form>
+</div>
+
+</body>
+</html>

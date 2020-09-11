@@ -1,0 +1,31 @@
+<%- include("header", {title: title}); %>
+
+<div class="container">
+    <h3>My Note</h3>
+    <!-- <pre><%= JSON.stringify(data, null, 4) %></pre> -->    
+    <table class="tb">
+        <tr>
+            <th>Word</th>
+            <th>Definition</th>
+            <th>Example</th>
+            <th>Option</th>
+        </tr>
+    <% for (const row of data) { %>
+        <tr>
+            <td><%= row.word %></td>
+            <td><%= row.definition %></td>
+            <td><%= row.example %></td>
+            <td class="option">
+              <a href="/">Add</a>
+              <a href="/note/edit/<%= row.word %>">Edit</a>
+              <a onclick="return deleteWord()" href="/note/delete/<%= row.word %>">Delete</a>
+            </td>
+        </tr>
+    <% }; %>
+    </table>
+</div>
+  
+</body>
+</html>
+
+

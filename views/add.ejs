@@ -1,0 +1,26 @@
+<%- include("header", {title: title}); %>
+
+<div class="container">
+    <h3>Add new words</h3>
+    <form class="form1" onsubmit="addWord()" method="post" action="/">
+        <div class="box">
+            <label for="word">Word</label>
+            <input type="text" id="word" name="word">
+        </div>
+
+        <div class="box">
+            <label for="def">Definition</label>
+            <input type="text" id="def" name="def">
+        </div>
+
+        <div class="box">
+            <label for="ex">Example</label>
+            <input type="text" id="ex" name="ex">
+        </div>
+
+        <input type="submit" id="btn" name="add" value="Add">
+    </form>
+</div>
+
+</body>
+</html>

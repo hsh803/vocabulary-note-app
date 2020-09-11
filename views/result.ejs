@@ -1,0 +1,27 @@
+<%- include("header", {title: title}); %>
+
+<div class="container">
+    <h3>Search Word</h3>
+    <form class="form2" method="get" action="/search/result">
+        <input type="text" id="search" name="search">
+        <input type="submit" id="btn" value="Search">
+    </form>
+
+    <table class="tb">
+        <tr>
+            <th>Word</th>
+            <th>Definition</th>
+            <th>Example</th>
+        </tr>
+    <% for (const row of data) { %>
+        <tr>
+            <td><%= row.word %></td>
+            <td><%= row.definition %></td>
+            <td><%= row.example %></td>
+        </tr>
+    <% }; %>
+    </table>
+</div>
+
+</body>
+</html>
