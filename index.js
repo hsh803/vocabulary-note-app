@@ -12,21 +12,9 @@ app.use(bodyParser.urlencoded({ extended: false}));
 // Use double qoute to object names and values in voca.json file
 const mysql = require('mysql');
 const config = require('./config/voca.json');
-// Connect database in localhost
-// const dbConnect = mysql.createConnection(config);
 
 // Connect database in browser
 var db = mysql.createPool(config);
-
-// Database connection control
-mysql.createConnection(config).connect((err) => {
-    if(err) {
-        console.log('Not connected to database');
-    }
-    else {
-        console.log('Connected to database.');
-    }
-});
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
