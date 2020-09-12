@@ -16,15 +16,10 @@ const config = require('./config/voca.json');
 // const dbConnect = mysql.createConnection(config);
 
 // Connect database in browser
-var db = mysql.createPool({
-    host: config.host,
-    user: config.user,
-    password: config.password,
-    database: config.database
-  });
+var db = mysql.createPool(config);
 
 // Database connection control
-dbConnect.connect((err) => {
+mysql.createConnection(config).connect((err) => {
     if(err) {
         console.log('Not connected to database');
     }
