@@ -9,6 +9,8 @@ Heroku account (Create account in Heroku website)
 ### 1. Create Heroku App
 1) Login to your Heroku account in browser or in terminal by using following command line: `heroku login`.
 2) Go to the root dicrectory of the app and create Heroku app by using following command line: `heroku create <app name>`.
+3) Create git repository: `git init`.
+4) Add remote version of git repository to heroku: `heroku git:remote -a account-tracking-app`.
 
 
 ### 2. Configure MySQL database for Node.js on Heroku app
@@ -26,12 +28,7 @@ Heroku account (Create account in Heroku website)
 6) Server port should be `process.env.PORT` for Heroku to connect to random server in browser. (index.js)
 7) Use `createPool` for conncecting database to MySQL (createConnection cause the connection error, like H10. (index.js)
 
-`var db = mysql.createPool({
-    host: config.host,
-    user: config.user,
-    password: config.password,
-    database: config.database
-  });`
+`var db = mysql.createPool(config);`
 
 ### 3. Create a new server for Heroku database (I used MySQL workbench)
 1) Fill "Hostname", "Username" and "Password" by using the Heroku database URL.
@@ -39,9 +36,9 @@ Heroku account (Create account in Heroku website)
 
 ### 4. Deploy the app to Heroku (I used Heroku CLI)
 1) Initiate git in root directory of the app and commit files remotely to the repository by using following command line: 
-`git init`
 `git add .` (or `git add <file name>`)
 `git commit -m "message"`
+`git push heroku master`
 
 
 Reference:<br/>
