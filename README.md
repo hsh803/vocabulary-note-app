@@ -10,7 +10,7 @@ Heroku account (Create account in Heroku website)
 1) Login to your Heroku account in browser or in terminal by using following command line: `heroku login`.
 2) Go to the root dicrectory of the app and create Heroku app by using following command line: `heroku create <app name>`.
 3) Create git repository: `git init`.
-4) Add remote version of git repository to heroku: `heroku git:remote -a account-tracking-app`.
+4) Add remote version of git repository to heroku: `heroku git:remote -a <app name>`.
 
 
 ### 2. Configure MySQL database for Node.js on Heroku app
